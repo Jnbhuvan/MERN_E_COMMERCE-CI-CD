@@ -10,7 +10,7 @@ import AddProduct from "./admin/AddProduct.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Cart from "./pages/Cart.jsx";
 import CheckoutAddress from "./pages/CheckoutAddress.jsx";
-import Checkout from "./pages/checkout.jsx";
+import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/orderSuccess.jsx";
 // const router = createBrowserRouter([
 //   {
