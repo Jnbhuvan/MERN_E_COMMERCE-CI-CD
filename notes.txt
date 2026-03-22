@@ -1,0 +1,84 @@
+cd backend
+
+npm init
+
+npm install express cors dotenv mongoose
+
+create server.js
+
+create config.js folder -> db.js 
+
+create .env
+
+inside the server.js
+contents:
+
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+
+dotenv.config();
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+connectDB();
+
+app.listen(5000, () => {
+  console.log("Server is running on port 5000");
+});
+
+
+--------------------------------------------------
+
+create db.js
+
+import mongoose from "mongoose";
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("MONGODB connected successfully");
+  } catch (error) {
+    console.log(`Error:${error.message}`);
+  }
+};
+
+export default connectDB;
+------------------------------------------
+
+.env
+
+MONGODB_URI= mongodb://localhost:27017/mern-ecom
+
+----------------------------------------------------
+check 5000
+
+cd ..
+
+
+npm create vite@latest frontend --template react
+
+javascript, react
+
+npm install axios react-router
+
+
+======
+backend
+npm install bcrypt # for password hasing
+
+
+32min
+
+-----
+goto backend 
+npm i jsonwebtoken
+
