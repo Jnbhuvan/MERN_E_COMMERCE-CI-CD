@@ -1,16 +1,26 @@
 services:
   frontend:
     build: ./frontend
-    ports:
-      - "5173:5173"
+    expose:
+      - "5173"
     environment:
-      - VITE_API_URL=http://localhost:5000/api
+      - VITE_API_URL=/api
     depends_on:
       - backend
 
   backend:
     build: ./backend
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
     env_file:
       - ./backend/.env
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend

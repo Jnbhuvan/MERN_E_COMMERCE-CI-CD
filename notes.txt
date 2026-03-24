@@ -82,3 +82,23 @@ npm install bcrypt # for password hasing
 goto backend 
 npm i jsonwebtoken
 
+-------------------------------------------------------------------------
+
+docker-compose.yml
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
