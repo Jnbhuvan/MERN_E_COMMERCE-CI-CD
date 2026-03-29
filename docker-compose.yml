@@ -1,6 +1,7 @@
 services:
   frontend:
-    build: ./frontend
+    # build: ./frontend
+    image: bhvnjn/mern-frontend:latest
     container_name: frontend
     expose:
       - "5173"
@@ -13,7 +14,8 @@ services:
       - app-network
 
   backend:
-    build: ./backend
+    #build: ./backend
+    image: bhvnjn/mern-backend:latest
     container_name: backend
     expose:
       - "5000"
