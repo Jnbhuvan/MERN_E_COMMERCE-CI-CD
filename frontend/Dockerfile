@@ -20,7 +20,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm install
-RUN npm run build
+# RUN npm run build
 
 # Stage 2: Serve
 FROM nginx:alpine
