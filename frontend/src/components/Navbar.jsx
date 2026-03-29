@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between p-4 shadow bg-black text-white">
       <Link to="/" className="font-bold text-xl">
-        StoreFront - CI/CD Project
+        StoreFront - CI/CD Project hello
       </Link>
 
       <div className="flex gap-4 items-center">
