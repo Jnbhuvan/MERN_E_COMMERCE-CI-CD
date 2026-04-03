@@ -6,8 +6,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     host: true,
-    allowedHosts: [
-      "autoscaling-997473907.ap-south-1.elb.amazonaws.com"
-    ]
+    allowedHosts: "all"
   }
 });
