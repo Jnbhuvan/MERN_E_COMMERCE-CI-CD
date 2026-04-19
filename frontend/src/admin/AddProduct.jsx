@@ -89,7 +89,7 @@ export default function AddProduct() {
       await api.post("/products/add", form);
       // Optional: replace alert with a toast later
       alert("Product added successfully!");
-      navigate("/admin/products");
+      navigate("/admin");
     } catch (error) {
       console.error("Error adding product:", error);
     }

@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <nav className="flex justify-between p-4 shadow bg-black text-white">
       <Link to="/" className="font-bold text-xl">
-        E-Commerce Application - MERN CI/CD Pipeline Project
+        StoreFront - MERN CI/CD Pipeline Project
       </Link>
 
       <div className="flex gap-4 items-center">
