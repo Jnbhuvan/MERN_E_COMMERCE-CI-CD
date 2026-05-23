@@ -154,14 +154,14 @@ export default function Home() {
                         </h2>
                       </Link>
 
-                      <div className="mt-4 flex items-center justify-between">
-                        <p className="text-lg font-bold text-gray-900">
+                      <div className="mt-4 flex items-center justify-between gap-4">
+                        <p className="text-base font-semibold text-gray-900">
                           ₹{product.price.toLocaleString("en-IN")}
                         </p>
 
                         <button
                           onClick={() => addToCart(product._id)}
-                          className="px-3 py-2 bg-gray-900 text-white text-xs rounded-lg hover:bg-purple-600 transition"
+                          className="px-3 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-500 text-white text-sm rounded-md hover:opacity-95 transition"
                         >
                           Add to Cart
                         </button>

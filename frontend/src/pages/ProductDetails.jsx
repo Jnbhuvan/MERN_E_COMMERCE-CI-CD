@@ -41,7 +41,7 @@ function ProductDetails() {
       <img
         src={product.image}
         alt={product.title}
-        className="w-full h-40 object-contain bg-white rounded"
+        className="w-full h-48 object-contain bg-white rounded-md shadow-sm"
       />
       <h1 className="text-2xl font-bold mt-4">{product.title}</h1>
       <p className="text-gray-700 mt-2">{product.description}</p>
@@ -49,7 +49,7 @@ function ProductDetails() {
 
       <button
         onClick={addToCart}
-        className="mt-6 w-full md:w-1/2 bg-black text-white py-3 rounded-lg hover:bg-purple-950 transition"
+        className="mt-6 w-full md:w-1/3 bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-2 rounded-md hover:opacity-95 transition text-sm"
       >
         Add to Cart
       </button>
