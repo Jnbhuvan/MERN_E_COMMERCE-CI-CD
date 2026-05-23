@@ -12,6 +12,8 @@ import Cart from "./pages/Cart.jsx";
 import CheckoutAddress from "./pages/CheckoutAddress.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import OrderSuccess from "./pages/orderSuccess.jsx";
+import AdminProtectedRoute from "./components/AdminProtectedRoute.jsx";
+import { AdminAuthProvider } from "./context/AdminAuthContext.jsx";
 // const router = createBrowserRouter([
 //   {
 
@@ -64,9 +66,30 @@ const router = createBrowserRouter([
       { path: "/product/:id", element: <ProductDetails /> },
       { path: "/cart", element: <Cart /> },
 
-      { path: "/admin", element: <ProductList /> },
-      { path: "/admin/products/add", element: <AddProduct /> },
-      { path: "/admin/products/edit/:id", element: <EditProduct /> },
+      {
+        path: "/admin",
+        element: (
+          <AdminProtectedRoute>
+            <ProductList />
+          </AdminProtectedRoute>
+        ),
+      },
+      {
+        path: "/admin/products/add",
+        element: (
+          <AdminProtectedRoute>
+            <AddProduct />
+          </AdminProtectedRoute>
+        ),
+      },
+      {
+        path: "/admin/products/edit/:id",
+        element: (
+          <AdminProtectedRoute>
+            <EditProduct />
+          </AdminProtectedRoute>
+        ),
+      },
       { path: "/checkout-address", element: <CheckoutAddress /> },
       { path: "/checkout", element: <Checkout /> },
       { path: "/order-success/:id", element: <OrderSuccess /> },
@@ -75,5 +98,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function APP() {
-  return <RouterProvider router={router} />;
+  return (
+    <AdminAuthProvider>
+      <RouterProvider router={router} />
+    </AdminAuthProvider>
+  );
 }
