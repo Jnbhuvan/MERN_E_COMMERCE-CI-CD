@@ -75,6 +75,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/admin/products",
+        element: (
+          <AdminProtectedRoute>
+            <ProductList />
+          </AdminProtectedRoute>
+        ),
+      },
+      {
         path: "/admin/products/add",
         element: (
           <AdminProtectedRoute>
@@ -83,7 +91,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/products/edit/:id",
+        path: "/admin/products/update/:id",
         element: (
           <AdminProtectedRoute>
             <EditProduct />
