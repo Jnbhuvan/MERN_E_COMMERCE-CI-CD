@@ -89,7 +89,7 @@ export default function Home() {
           >
             <option value="">All Categories</option>
             <option value="Laptops">Laptops</option>
-            <option value="Mobiles">Mobiles</option>
+            <option value="Mobiles">Smartphones</option>
             <option value="Tablets">Tablets</option>
           </select>
         </motion.div>
